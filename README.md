@@ -10,9 +10,7 @@ This website is a lightweight, fully static HTML/CSS implementation inspired by 
 
 ## 📁 Project Structure
 
-├── index.html # Main HTML page 
-├── CV_Yun_Bai.pdf # Downloadable curriculum vitae 
-├── README.md # This file
+<pre><code>``` ├── index.html # Main HTML page ├── CV_Yun_Bai.pdf # Downloadable curriculum vitae ├── README.md # This file ``` </code></pre>
 
 ## ✨ Features
 

@@ -6,11 +6,13 @@ This website is a lightweight, fully static HTML/CSS implementation inspired by 
 
 ## 🌐 Live Site
 
-👉 [https://yunbai.github.io](https://yunbai.github.io)
+👉 [https://yb97by.github.io/yunbai.github.io/](https://yb97by.github.io/yunbai.github.io/)
 
 ## 📁 Project Structure
 
-. ├── index.html # Main HTML page ├── CV_Yun_Bai.pdf # Downloadable curriculum vitae ├── README.md # This file
+. ├── index.html # Main HTML page 
+. ├── CV_Yun_Bai.pdf # Downloadable curriculum vitae 
+. ├── README.md # This file
 
 markdown
 Copy
@@ -29,7 +31,7 @@ Edit
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/YOUR_USERNAME/yunbai.github.io
+   git clone https://github.com/yb97by/yunbai.github.io
 (Optional) Edit index.html with your content or style preferences.
 
 Push to GitHub and enable GitHub Pages (from Settings → Pages → Deploy from main branch).

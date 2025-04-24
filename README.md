@@ -14,10 +14,6 @@ This website is a lightweight, fully static HTML/CSS implementation inspired by 
 . ├── CV_Yun_Bai.pdf # Downloadable curriculum vitae 
 . ├── README.md # This file
 
-markdown
-Copy
-Edit
-
 ## ✨ Features
 
 - Sidebar navigation similar to `al-folio`

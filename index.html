@@ -6,101 +6,82 @@
   <title>Yun Bai</title>
   <style>
     :root {
-      --main-color: #0055a5;
-      --bg-light: #f7f9fc;
-      --text-dark: #1a1a1a;
-      --gray: #666;
+      --main-color: #1f3c88;
+      --accent: #e0e7ff;
+      --text-color: #333;
+      --sidebar-bg: #f5f5f5;
+      --content-bg: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
     }
 
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      padding: 0;
-      background-color: var(--bg-light);
-      color: var(--text-dark);
-      line-height: 1.6;
-    }
-
-    header {
-      background-color: white;
-      border-bottom: 1px solid #ddd;
-      position: sticky;
-      top: 0;
-      z-index: 999;
-    }
-
-    nav {
-      max-width: 960px;
-      margin: auto;
-      padding: 1rem 2rem;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      color: var(--text-color);
       display: flex;
-      justify-content: space-between;
-      align-items: center;
+      background: var(--accent);
     }
 
-    nav h1 {
-      font-size: 1.4rem;
+    .sidebar {
+      width: 250px;
+      background: var(--sidebar-bg);
+      height: 100vh;
+      padding: 2rem 1rem;
+      position: fixed;
+    }
+
+    .sidebar h1 {
+      font-size: 1.5rem;
       color: var(--main-color);
-      margin: 0;
+      margin-bottom: 2rem;
     }
 
-    nav ul {
+    .sidebar nav ul {
       list-style: none;
-      display: flex;
-      gap: 1.5rem;
-      margin: 0;
       padding: 0;
     }
 
-    nav a {
-      text-decoration: none;
-      color: var(--gray);
-      font-weight: 500;
-      transition: color 0.3s ease;
+    .sidebar nav ul li {
+      margin: 1rem 0;
     }
 
-    nav a:hover {
+    .sidebar nav ul li a {
+      color: var(--text-color);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .sidebar nav ul li a:hover {
       color: var(--main-color);
+    }
+
+    .content {
+      margin-left: 250px;
+      padding: 2rem;
+      background: var(--content-bg);
+      width: calc(100% - 250px);
     }
 
     section {
-      max-width: 800px;
-      margin: 3rem auto;
-      padding: 0 1.5rem;
-    }
-
-    #hero {
-      background-color: #eaf3ff;
-      text-align: center;
-      padding: 4rem 2rem;
-    }
-
-    #hero h2 {
-      margin-bottom: 0.5rem;
-      font-size: 2rem;
-    }
-
-    #hero p {
-      font-size: 1.1rem;
-      color: var(--gray);
+      margin-bottom: 3rem;
     }
 
     h2 {
-      border-bottom: 2px solid var(--main-color);
+      color: var(--main-color);
+      border-bottom: 1px solid #ccc;
       padding-bottom: 0.3rem;
-      margin-bottom: 1rem;
-    }
-
-    ul, ol {
-      padding-left: 1.2rem;
     }
 
     footer {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      font-size: 0.8rem;
       text-align: center;
-      background-color: #ddd;
-      padding: 1rem;
-      font-size: 0.9rem;
-      color: #444;
+      color: #888;
+      border-top: 1px solid #eee;
     }
 
     a {
@@ -109,9 +90,9 @@
   </style>
 </head>
 <body>
-  <header>
+  <div class="sidebar">
+    <h1>Yun Bai</h1>
     <nav>
-      <h1>Yun Bai</h1>
       <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#research">Research</a></li>
@@ -119,56 +100,53 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-  </header>
+  </div>
 
-  <section id="hero">
-    <h2>Hello, I'm Yun Bai</h2>
-    <p>Ph.D. candidate at Duke University, working on programmable digital composites and shape-morphing materials.</p>
-  </section>
+  <div class="content">
+    <section id="about">
+      <h2>About Me</h2>
+      <p>Ph.D. candidate at Duke University working on programmable digital composites and shape-morphing materials. My work bridges materials science, mechanical engineering, and smart systems to create reconfigurable and adaptive structures.</p>
+    </section>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I work at the intersection of materials science, mechanical engineering, and smart systems. My research explores programmable metamaterials, soft electronics, and adaptive structural systems for real-time mechanical functionality.</p>
-  </section>
+    <section id="research">
+      <h2>Research</h2>
+      <ul>
+        <li><strong>Nature (2022):</strong> A self-evolving reprogrammable surface for shape morphing.</li>
+        <li><strong>Nature Communications (2022):</strong> Fast electromagnetic actuation of liquid metal networks.</li>
+        <li><strong>Digital solid-liquid composite:</strong> Manuscript in preparation on programmable 3D mechanical properties.</li>
+      </ul>
+    </section>
 
-  <section id="research">
-    <h2>Research</h2>
-    <ul>
-      <li><strong>Nature (2022):</strong> A self-evolving reprogrammable surface for shape morphing.</li>
-      <li><strong>Nature Communications (2022):</strong> Fast electromagnetic actuation of liquid metal networks.</li>
-      <li><strong>Digital solid-liquid composite:</strong> Manuscript in preparation on programmable 3D mechanical properties.</li>
-    </ul>
-  </section>
+    <section id="cv">
+      <h2>Curriculum Vitae</h2>
+      <p><a href="CV_Yun_Bai.pdf" target="_blank">Download Full CV (PDF)</a></p>
 
-  <section id="cv">
-    <h2>Curriculum Vitae</h2>
-    <p><a href="CV_Yun_Bai.pdf" target="_blank">Download Full CV (PDF)</a></p>
+      <h3>Education</h3>
+      <ul>
+        <li><strong>Duke University</strong>, Ph.D. in Mechanical Engineering, 2021–Present</li>
+        <li><strong>Northwestern University</strong>, M.S. in Materials Science, 2019–2020</li>
+        <li><strong>HUST</strong>, B.S. in Materials Science, 2015–2019</li>
+      </ul>
 
-    <h3>Education</h3>
-    <ul>
-      <li><strong>Duke University</strong>, Ph.D. in Mechanical Engineering, 2021–Present</li>
-      <li><strong>Northwestern University</strong>, M.S. in Materials Science, 2019–2020</li>
-      <li><strong>HUST</strong>, B.S. in Materials Science, 2015–2019</li>
-    </ul>
+      <h3>Selected Awards</h3>
+      <ul>
+        <li>Graduate Student Gold Award, MRS Spring 2025</li>
+        <li>Poster Award, Gordon Research Conference 2024</li>
+        <li>Chinese Government Award for Outstanding Students Abroad 2022</li>
+      </ul>
+    </section>
 
-    <h3>Selected Awards</h3>
-    <ul>
-      <li>Graduate Student Gold Award, MRS Spring 2025</li>
-      <li>Poster Award, Gordon Research Conference 2024</li>
-      <li>Chinese Government Award for Outstanding Students Abroad 2022</li>
-    </ul>
-  </section>
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: yun.bai@duke.edu</p>
+      <p>GitHub: <a href="https://github.com/yb97by" target="_blank">yb97by</a></p>
+      <p>Website: <a href="https://ni.pratt.duke.edu/" target="_blank">Ni Lab @ Duke</a></p>
+    </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: yun.bai@duke.edu</p>
-    <p>GitHub: <a href="https://github.com/yourusername" target="_blank">yourusername</a></p>
-    <p>Website: <a href="https://ni.pratt.duke.edu/" target="_blank">Ni Lab @ Duke</a></p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Yun Bai</p>
-  </footer>
+    <footer>
+      <p>© 2025 Yun Bai. Powered by GitHub Pages. Inspired by al-folio layout.</p>
+    </footer>
+  </div>
 </body>
 </html>
 

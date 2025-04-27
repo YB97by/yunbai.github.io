@@ -18,7 +18,6 @@ This website is a lightweight, fully static HTML/CSS implementation. It is hoste
 
 ## ✨ Features
 
-- Sidebar navigation similar to `al-folio`
 - Sections: About, Research, CV, Contact
 - Downloadable CV
 - Responsive layout

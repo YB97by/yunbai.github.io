@@ -169,6 +169,16 @@
 
 </head>
 <body>
+  <div class="topnav">
+    <button id="menu-toggle">☰ Menu</button>
+    <div class="dropdown-menu" id="dropdown-menu">
+      <a onclick="showSection('about')">About</a>
+      <a onclick="showSection('research')">Research</a>
+      <a onclick="showSection('publication')">Publication</a>
+      <a onclick="showSection('contact')">Contact</a>
+    </div>
+  </div>
+
   <div class="layout">
     <div class="sidebar">
       <h1>Content</h1>
@@ -716,18 +726,19 @@
 
 
   <script>
-    function showSection(id) {
-      document.querySelectorAll('section').forEach(section => {
-        section.classList.remove('active');
-      });
-      document.getElementById(id).classList.add('active');
-  
-      // top
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth' //  'auto'
-      });
-    }
-  </script>
+  document.getElementById("menu-toggle").addEventListener("click", function () {
+    const menu = document.getElementById("dropdown-menu");
+    menu.classList.toggle("active");
+  });
+
+  function showSection(id) {
+    document.querySelectorAll('section').forEach(section => {
+      section.classList.remove('active');
+    });
+    document.getElementById(id).classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+
 </body>
 </html>

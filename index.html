@@ -12,11 +12,11 @@
       --sidebar-bg: #f5f5f5;
       --content-bg: #ffffff;
     }
-
+  
     * {
       box-sizing: border-box;
     }
-
+  
     body {
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -26,12 +26,44 @@
       height: 100vh;
     }
 
+    .topnav {
+      display: none;
+      background: var(--main-color);
+      padding: 0.75rem 1rem;
+    }
+  
+    .topnav button {
+      background: none;
+      color: white;
+      font-size: 1.2rem;
+      border: none;
+      cursor: pointer;
+    }
+  
+    .dropdown-menu {
+      display: none;
+      flex-direction: column;
+      background: white;
+      border-top: 1px solid #ddd;
+    }
+  
+    .dropdown-menu a {
+      padding: 1rem;
+      text-decoration: none;
+      color: var(--text-color);
+      border-bottom: 1px solid #eee;
+    }
+  
+    .dropdown-menu a:hover {
+      background-color: var(--accent);
+    }
+  
     .layout {
       display: flex;
       height: 100vh;
       overflow: hidden;
     }
-
+  
     .sidebar,
     .rightbar {
       width: 225px;
@@ -43,38 +75,37 @@
       position: sticky;  /* not fixed, so it behaves nicely */
       top: 0;
     }
-
-
+  
     .rightbar {
       background-color: #f9f9f9;
     }
-
+  
     .sidebar h1 {
       font-size: 1.5rem;
       color: var(--main-color);
       margin-bottom: 2rem;
     }
-
+  
     .sidebar nav ul {
       list-style: none;
       padding: 0;
     }
-
+  
     .sidebar nav ul li {
       margin: 1rem 0;
     }
-
+  
     .sidebar nav ul li a {
       color: var(--text-color);
       text-decoration: none;
       font-weight: 500;
       cursor: pointer;
     }
-
+  
     .sidebar nav ul li a:hover {
       color: var(--main-color);
     }
-
+  
     .content {
       flex-grow: 1;
       overflow-y: auto;
@@ -83,22 +114,22 @@
       background: var(--content-bg);
     }
 
-
+  
     section {
       display: none;
       margin-bottom: 3rem;
     }
-
+  
     section.active {
       display: block;
     }
-
+  
     h2 {
       color: var(--main-color);
       border-bottom: 1px solid #ccc;
       padding-bottom: 0.3rem;
     }
-
+  
     footer {
       margin-top: 4rem;
       padding-top: 2rem;
@@ -107,27 +138,33 @@
       color: #888;
       border-top: 1px solid #eee;
     }
-
+  
     a {
       color: var(--main-color);
     }
-
+  
     @media (max-width: 900px) {
-      .layout {
-        flex-direction: column;
-      }
-
       .sidebar,
       .rightbar {
         display: none;
       }
-
+  
+      .topnav {
+        display: flex;
+        flex-direction: column;
+      }
+  
+      .dropdown-menu.active {
+        display: flex;
+      }
+  
       .content {
         width: 100%;
         padding: 1rem;
       }
     }
   </style>
+  
 
 
 </head>

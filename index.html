@@ -727,7 +727,7 @@
   </div>
 
 
-  <script>
+<script>
   document.getElementById("menu-toggle").addEventListener("click", function () {
     const menu = document.getElementById("dropdown-menu");
     menu.classList.toggle("active");
@@ -738,7 +738,10 @@
       section.classList.remove('active');
     });
     document.getElementById(id).classList.add('active');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // 滚动到顶部
+    document.querySelector('.content').scrollTo({ top: 0, behavior: 'smooth' });
+
   }
 </script>
 

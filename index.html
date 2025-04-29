@@ -26,7 +26,7 @@
     }
 
     .sidebar {
-      width: 250px;
+      width: 225px;
       background: var(--sidebar-bg);
       height: 100vh;
       padding: 2rem 1rem;
@@ -59,11 +59,21 @@
       color: var(--main-color);
     }
 
+    .rightbar {
+    width: 225px;
+    background: var(--sidebar-bg);
+    height: 100vh;
+    padding: 2rem 1rem;
+    position: fixed;
+    right: 0;
+    top: 0;
+    }
+
     .content {
-      margin-left: 250px;
+      margin-left: 225px;
       padding: 2rem;
       background: var(--content-bg);
-      width: calc(100% - 250px);
+      width: calc(100% - 450px);
     }
 
     section {
@@ -94,6 +104,8 @@
       color: var(--main-color);
     }
   </style>
+
+
 </head>
 <body>
   <div class="sidebar">
@@ -108,16 +120,44 @@
     </nav>
   </div>
 
+
+  <div class="rightbar" style="width: 225px; padding: 2rem; background-color: #f9f9f9;">
+    
+    <h4 style="margin-top: 0;">Yun Bai</h4>
+    <p style="font-size: 0.9rem; color: #555;">
+      Ph.D. Candidate<br>
+      Mechanical Engineering & Materials Science<br>
+      Duke University
+    </p>
+  
+    <h4>Contact</h4>
+    <p style="font-size: 0.9rem;">
+      <a href="mailto:yun.bai@duke.edu" target="_blank">Email</a><br>
+      <a href="https://scholar.google.com/citations?user=M-WIuMIAAAAJ&hl=en" target="_blank">Google Scholar</a><br>
+      <a href="https://www.linkedin.com/in/yun-bai-a41209252/" target="_blank">LinkedIn</a>
+    </p>
+  
+    <h4>Opportunities</h4>
+    <p style="font-size: 0.9rem;">Exploring postdoctoral opportunities for 2025.</p>
+  
+    <a href="CV_Yun_Bai.pdf" target="_blank" style="display: inline-block; margin-top: 0.5rem; padding: 0.4rem 0.8rem; background: #1f3c88; color: white; border-radius: 5px; text-decoration: none;">Download CV</a>
+  
+  </div>
+
+
   <div class="content">
     <section id="about" class="active">
+  
+      <!-- 🟦 Flex布局：Education + 头像 -->
       <div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 3.5rem;">
+        <!-- 左侧：About + Education -->
         <div style="flex: 1 1 450px; min-width: 300px;">
           <h2>Yun Bai (白云)</h2>
           <p>Greetings! I am a Ph.D. candidate at <strong><a href="https://mems.duke.edu/" target="_blank" style="color: #04439b;">Duke University</a></strong>, working in the <strong><a href="https://ni.pratt.duke.edu/" target="_blank" style="color: #04439b;">Ni Lab</a></strong>, developing programmable materials with real-time control over mechanical properties.</p>
           <p>I earned my M.S. in Materials Science from <strong><a href="https://www.mccormick.northwestern.edu/materials-science/" target="_blank" style="color: #04439b;">Northwestern University</a></strong>, where I worked in the <strong><a href="https://rogersgroup.northwestern.edu/" target="_blank" style="color: #04439b;">Rogers Research Group</a></strong>. My undergraduate training was at <strong><a href="https://english.hust.edu.cn/" target="_blank" style="color: #04439b;">Huazhong University of Science and Technology (HUST; 华中科技大学)</a></strong>.</p>
-
+  
           <h3 style="margin-top: 2rem;">Education</h3>
-          
+  
           <div style="display: flex; align-items: flex-start; margin-bottom: 1.5rem;">
             <img src="./Education/Duke_University_logo.svg" alt="Duke logo" style="width: 100px; margin-right: 1rem;" />
             <div>
@@ -126,7 +166,7 @@
               <p>Research assistant, 2021–Present</p>
             </div>
           </div>
-
+  
           <div style="display: flex; align-items: flex-start; margin-bottom: 1.5rem;">
             <img src="./Education/Northwestern_University_logo.svg" alt="Northwestern logo" style="width: 100px; margin-right: 1rem;" />
             <div>
@@ -135,75 +175,95 @@
               <p>Graduate student research assistant, 2019–2020</p>
             </div>
           </div>
-
-          <div style="display: flex; align-items: flex-start;">
-            <img src="./Education/Hust_logo.png" alt="HUST logo" style="width: 100px; margin-right: 1rem; margin-bottom: 1.5rem;" />
+  
+          <div style="display: flex; align-items: flex-start; margin-bottom: 1.5rem;">
+            <img src="./Education/Hust_logo.png" alt="HUST logo" style="width: 100px; margin-right: 1rem;" />
             <div>
               <strong>Huazhong University of Science and Technology (HUST)</strong><br/>
               <p>B.S., Materials Science and Engineering, 2015–2019</p>
               <p>Undergraduate student research assistant, 2018–2019</p>
             </div>
           </div>
-
-          <h3 style="margin-top: 2rem;">News</h3>
-          <div style="display: grid; grid-template-columns: 100px auto; row-gap: 1.2rem; column-gap: 1rem;">
-            <div><strong>Apr 10, 2025</strong></div>
-            <div>
-              Honored to receive the MRS <a href="https://www.mrs.org/advancing-careers/award-central/spring-awards/graduate-student-awards/past-recipients" target="_blank" style="color: #04439b;"><strong>Graduate Student Gold Award</strong></a>.
-            </div>
-            <div style="grid-column: span 2; display: flex; flex-direction: column; align-items: center;">
-              <img src="./News_pic/MRS_gsa.jpg" alt="MRS Award" 
-                   style="width: 100%; max-width: 400px; border-radius: 6px; 
-                          margin: 0.5rem 0; box-shadow: 0 2px 6px rgba(0,0,0,0.1);" />
-              <p style="font-size: 0.85rem; color: #555; margin: 0.3rem 0 0;">Seattle, WA, USA</p>
-            </div>
-
-            <div><strong>Dec 15, 2024</strong></div>
-            <div>
-              Honored to present at the <a href="https://pratt.duke.edu/news/metamaterials-workshop-2024/" target="_blank" style="color: #04439b;">International Duke AMM Workshops</a>.
-            </div>
-            <div style="grid-column: span 2; display: flex; flex-direction: column; align-items: center;">
-              <img src="./News_pic/AMM_2024.jpg" alt="AMM_2024" style="width: 100%; max-width: 400px; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);" />
-              <p style="font-size: 0.85rem; color: #555; margin-top: 0.3rem;">Durham, NC, USA</p>
-            </div>
-
-            <div><strong>Feb 2, 2024</strong></div>
-            <div>
-              Honored to receive the <strong>Best Poster Award</strong> at <a href="https://www.grc.org/multifunctional-materials-and-structures-conference/2024/" target="_blank" style="color: #04439b;">Gordon Research Conference</a>.
-            </div>
-            <div style="grid-column: span 2; display: flex; flex-direction: column; align-items: center;">
-              <img src="./News_pic/GRC_2024.jpg" alt="Award 1" style="width: 200%; max-width: 400px; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);" />
-              <p style="font-size: 0.85rem; text-align: center; color: #555; margin-top: 0.5rem;">
-                Ventura, CA, USA
-              </p>
-            </div>
-
-
-
-          </div>
         </div>
-
+  
+        <!-- 右侧：头像 -->
         <div style="flex: 0 0 270px; display: flex; flex-direction: column; align-items: center;">
           <img src="Bai_Yun_photo.jpg" alt="Yun Bai photo" style="width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(2, 16, 165, 0.1); margin-top: 3.5rem;" />
           <p style="font-size: 0.9rem; line-height: 1; text-align: center;">Durham, NC, USA<br/>yun.bai@duke.edu</p>
         </div>
       </div>
+  
+      <!-- ✅ News -->
+      <div style="width: 100%; margin-top: 4rem;">
+        <h3 style="margin-top: 2rem;">News</h3>
+
+        <div style="display: grid; grid-template-columns: 100px auto; row-gap: 1.5rem; column-gap: 1.5rem;">
+
+          <!-- first -->
+          <div><strong>Apr 10, 2025</strong></div>
+          <div>
+            Honored to receive the MRS 
+            <a href="https://www.mrs.org/advancing-careers/award-central/spring-awards/graduate-student-awards/past-recipients" target="_blank" style="color: #04439b;">
+              <strong>Graduate Student Gold Award</strong>
+            </a>.
+          </div>
+
+          <!-- pic -->
+          <div style="grid-column: 1 / -1; display: flex; flex-direction: column; align-items: center; margin-top: 0.5rem;">
+            <img src="./News_pic/MRS_gsa.jpg" alt="MRS Award"
+                style="width: 100%; max-width: 400px; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);" />
+            <p style="font-size: 0.85rem; color: #555; margin-top: 0.3rem;">Seattle, WA, USA</p>
+          </div>
+
+          <!-- second -->
+          <div><strong>Dec 15, 2024</strong></div>
+          <div>
+            Honored to present at the 
+            <a href="https://pratt.duke.edu/news/metamaterials-workshop-2024/" target="_blank" style="color: #04439b;">
+              International Duke AMM Workshops
+            </a>.
+          </div>
+          <!-- pic -->
+          <div style="grid-column: 1 / -1; display: flex; flex-direction: column; align-items: center; margin-top: 0.5rem;">
+            <img src="./News_pic/AMM_2024.jpg" alt="AMM 2024" style="width: 100%; max-width: 400px; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);" />
+            <p style="font-size: 0.85rem; color: #555;">Durham, NC, USA</p>
+          </div>
+  
+          <!-- 第3条 -->
+          <div><strong>Feb 2, 2024</strong></div>
+          <div>
+            Honored to receive the 
+            <strong>Best Poster Award</strong> at 
+            <a href="https://www.grc.org/multifunctional-materials-and-structures-conference/2024/" target="_blank" style="color: #04439b;">
+              Gordon Research Conference
+            </a>.
+          </div>
+          <!-- pic -->
+          <div style="grid-column: 1 / -1; display: flex; flex-direction: column; align-items: center; margin-top: 0.5rem;">
+            <img src="./News_pic/GRC_2024.jpg" alt="GRC Award" style="width: 100%; max-width: 400px; border-radius: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);" />
+            <p style="font-size: 0.85rem; color: #555;">Ventura, CA, USA</p>
+          </div>
+  
+        </div>
+      </div>
+  
     </section>
+  
 
 
 
 
 
     <section id="research">
-      <h2 style="text-align: center; color: #04439b; margin-top: 3rem;">
+      <h2 style=" color: #04439b; margin-top: 3rem;">
         Research Interests
       </h2>
-      <p style="margin-top: 2rem; font-weight: 500; color: #1f3c88;">
+      <p style="margin-top: 2rem; font-weight: 600; color: #1f3c88;">
         · Programmable materials, active mechanical metamaterials, and robotic materials.<br>
         · Flexible electronics, precision measurement, and non-destructive testing.
       </p>
     
-      <h2 style="text-align: center; color: #04439b; margin-top: 3rem;">
+      <h2 style=" color: #04439b; margin-top: 3rem;">
         Programmable Materials
       </h2>
 
@@ -277,7 +337,7 @@
         </a>
       </p>
     
-      <h2 style="text-align: center; color: #04439b; margin-top: 3rem;">
+      <h2 style=" color: #04439b; margin-top: 3rem;">
         Bioelectronics
       </h2>
 
@@ -545,8 +605,10 @@
     
     
     <section id="contact">
+      <h2>Looking Ahead</h2>
       <p style="margin-top: 2rem; font-weight: 500; color: #1f3c88;">
-        I am actively seeking postdoctoral research opportunities beginning in late 2025. Please feel free to contact me. I sincerely appreciate your consideration and the opportunity.
+        I am actively seeking postdoctoral research opportunities beginning in late 2025.<br> 
+        Please feel free to contact me. I sincerely appreciate your consideration and the opportunity.
       </p>      
       <h2>Curriculum Vitae</h2>
       <p><a href="CV_Yun_Bai.pdf" target="_blank">Download Full CV (PDF)</a></p>

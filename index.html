@@ -21,16 +21,32 @@
       margin: 0;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
       color: var(--text-color);
-      display: flex;
       background: var(--accent);
+      overflow: hidden; /* prevent double scrollbar */
+      height: 100vh;
     }
 
-    .sidebar {
+    .layout {
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .sidebar,
+    .rightbar {
       width: 225px;
+      flex-shrink: 0;
+      padding: 2rem 1rem;
       background: var(--sidebar-bg);
       height: 100vh;
-      padding: 2rem 1rem;
-      position: fixed;
+      overflow-y: auto;
+      position: sticky;  /* not fixed, so it behaves nicely */
+      top: 0;
+    }
+
+
+    .rightbar {
+      background-color: #f9f9f9;
     }
 
     .sidebar h1 {
@@ -59,22 +75,14 @@
       color: var(--main-color);
     }
 
-    .rightbar {
-    width: 225px;
-    background: var(--sidebar-bg);
-    height: 100vh;
-    padding: 2rem 1rem;
-    position: fixed;
-    right: 0;
-    top: 0;
-    }
-
     .content {
-      margin-left: 225px;
+      flex-grow: 1;
+      overflow-y: auto;
+      height: 100vh;
       padding: 2rem;
       background: var(--content-bg);
-      width: calc(100% - 450px);
     }
+
 
     section {
       display: none;
@@ -103,95 +111,98 @@
     a {
       color: var(--main-color);
     }
+
+    @media (max-width: 900px) {
+      .layout {
+        flex-direction: column;
+      }
+
+      .sidebar,
+      .rightbar {
+        display: none;
+      }
+
+      .content {
+        width: 100%;
+        padding: 1rem;
+      }
+    }
   </style>
 
 
 </head>
 <body>
-  <div class="sidebar">
-    <h1>Yun Bai</h1>
-    <nav>
-      <ul>
-        <li><a onclick="showSection('about')">About</a></li>
-        <li><a onclick="showSection('research')">Research</a></li>
-        <li><a onclick="showSection('publication')">Publication</a></li>
-        <li><a onclick="showSection('contact')">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
+  <div class="layout">
+    <div class="sidebar">
+      <h1>Content</h1>
+      <nav>
+        <ul>
+          <li><a onclick="showSection('about')">About</a></li>
+          <li><a onclick="showSection('research')">Research</a></li>
+          <li><a onclick="showSection('publication')">Publication</a></li>
+          <li><a onclick="showSection('contact')">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
 
 
-  <div class="rightbar" style="width: 225px; padding: 2rem; background-color: #f9f9f9;">
-    
-    <h4 style="margin-top: 0;">Yun Bai</h4>
-    <p style="font-size: 0.9rem; color: #555;">
-      Ph.D. Candidate<br>
-      Mechanical Engineering & Materials Science<br>
-      Duke University
-    </p>
-  
-    <h4>Contact</h4>
-    <p style="font-size: 0.9rem;">
-      <a href="mailto:yun.bai@duke.edu" target="_blank">Email</a><br>
-      <a href="https://scholar.google.com/citations?user=M-WIuMIAAAAJ&hl=en" target="_blank">Google Scholar</a><br>
-      <a href="https://www.linkedin.com/in/yun-bai-a41209252/" target="_blank">LinkedIn</a>
-    </p>
-  
-    <h4>Opportunities</h4>
-    <p style="font-size: 0.9rem;">Exploring postdoctoral opportunities for 2025.</p>
-  
-    <a href="CV_Yun_Bai.pdf" target="_blank" style="display: inline-block; margin-top: 0.5rem; padding: 0.4rem 0.8rem; background: #1f3c88; color: white; border-radius: 5px; text-decoration: none;">Download CV</a>
-  
-  </div>
+
 
 
   <div class="content">
     <section id="about" class="active">
   
-      <!-- 🟦 Flex布局：Education + 头像 -->
-      <div style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 3.5rem;">
-        <!-- 左侧：About + Education -->
-        <div style="flex: 1 1 450px; min-width: 300px;">
-          <h2>Yun Bai (白云)</h2>
+      <h2 style="margin-bottom: 1.5rem;">Yun Bai (白云)</h2>
+
+      <!-- Flex容器：左文字右头像 -->
+      <div style="display: flex; align-items: flex-start; gap: 3rem; flex-wrap: nowrap;">
+      
+        <!-- 左：正文介绍 -->
+        <div style="flex: 1 1 auto; min-width: 300px;">
           <p>Greetings! I am a Ph.D. candidate at <strong><a href="https://mems.duke.edu/" target="_blank" style="color: #04439b;">Duke University</a></strong>, working in the <strong><a href="https://ni.pratt.duke.edu/" target="_blank" style="color: #04439b;">Ni Lab</a></strong>, developing programmable materials with real-time control over mechanical properties.</p>
           <p>I earned my M.S. in Materials Science from <strong><a href="https://www.mccormick.northwestern.edu/materials-science/" target="_blank" style="color: #04439b;">Northwestern University</a></strong>, where I worked in the <strong><a href="https://rogersgroup.northwestern.edu/" target="_blank" style="color: #04439b;">Rogers Research Group</a></strong>. My undergraduate training was at <strong><a href="https://english.hust.edu.cn/" target="_blank" style="color: #04439b;">Huazhong University of Science and Technology (HUST; 华中科技大学)</a></strong>.</p>
-  
-          <h3 style="margin-top: 2rem;">Education</h3>
-  
-          <div style="display: flex; align-items: flex-start; margin-bottom: 1.5rem;">
-            <img src="./Education/Duke_University_logo.svg" alt="Duke logo" style="width: 100px; margin-right: 1rem;" />
-            <div>
-              <strong>Duke University</strong><br/>
-              <p>Ph.D., Mechanical Engineering and Materials Science, 2021–Present</p>
-              <p>Research assistant, 2021–Present</p>
-            </div>
-          </div>
-  
-          <div style="display: flex; align-items: flex-start; margin-bottom: 1.5rem;">
-            <img src="./Education/Northwestern_University_logo.svg" alt="Northwestern logo" style="width: 100px; margin-right: 1rem;" />
-            <div>
-              <strong>Northwestern University</strong><br/>
-              <p>M.S., Materials Science and Engineering, 2019–2020</p>
-              <p>Graduate student research assistant, 2019–2020</p>
-            </div>
-          </div>
-  
-          <div style="display: flex; align-items: flex-start; margin-bottom: 1.5rem;">
-            <img src="./Education/Hust_logo.png" alt="HUST logo" style="width: 100px; margin-right: 1rem;" />
-            <div>
-              <strong>Huazhong University of Science and Technology (HUST)</strong><br/>
-              <p>B.S., Materials Science and Engineering, 2015–2019</p>
-              <p>Undergraduate student research assistant, 2018–2019</p>
-            </div>
-          </div>
         </div>
-  
-        <!-- 右侧：头像 -->
-        <div style="flex: 0 0 270px; display: flex; flex-direction: column; align-items: center;">
-          <img src="Bai_Yun_photo.jpg" alt="Yun Bai photo" style="width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(2, 16, 165, 0.1); margin-top: 3.5rem;" />
-          <p style="font-size: 0.9rem; line-height: 1; text-align: center;">Durham, NC, USA<br/>yun.bai@duke.edu</p>
+      
+        <!-- 右：头像 -->
+        <div style="flex: 0 0 150px; display: flex; flex-direction: column; align-items: center;">
+          <img src="Bai_Yun_photo.jpg" alt="Yun Bai photo"
+               style="width: 100%; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);" />
+          <p style="font-size: 0.9rem; color: #444; text-align: center; margin-top: 0.5rem;">
+            Durham, NC, USA<br>yun.bai@duke.edu
+          </p>
+        </div>
+      
+      </div>
+
+      <h3 style="margin-top: 0rem;">Education</h3>
+
+      <div style="display: flex; align-items: flex-start; margin-bottom: 1.5rem;">
+        <img src="./Education/Duke_University_logo.svg" alt="Duke logo" style="width: 100px; margin-right: 1rem;" />
+        <div>
+          <strong>Duke University</strong><br/>
+          <p>Ph.D., Mechanical Engineering and Materials Science, 2021–Present</p>
+          <p>Research assistant, 2021–Present</p>
         </div>
       </div>
+
+      <div style="display: flex; align-items: flex-start; margin-bottom: 1.5rem;">
+        <img src="./Education/Northwestern_University_logo.svg" alt="Northwestern logo" style="width: 100px; margin-right: 1rem;" />
+        <div>
+          <strong>Northwestern University</strong><br/>
+          <p>M.S., Materials Science and Engineering, 2019–2020</p>
+          <p>Graduate student research assistant, 2019–2020</p>
+        </div>
+      </div>
+
+      <div style="display: flex; align-items: flex-start; margin-bottom: 1.5rem;">
+        <img src="./Education/Hust_logo.png" alt="HUST logo" style="width: 100px; margin-right: 1rem;" />
+        <div>
+          <strong>Huazhong University of Science and Technology (HUST)</strong><br/>
+          <p>B.S., Materials Science and Engineering, 2015–2019</p>
+          <p>Undergraduate student research assistant, 2018–2019</p>
+        </div>
+      </div>
+  
   
       <!-- ✅ News -->
       <div style="width: 100%; margin-top: 4rem;">
@@ -647,6 +658,25 @@
       <p>© 2025 Yun Bai. Powered by GitHub Pages.</p>
     </footer>
   </div>
+
+  <div class="rightbar">
+    <h4 style="margin-top: 0;">Yun Bai</h4>
+    <p style="font-size: 0.9rem; color: #555;">
+      Ph.D. Candidate<br>
+      Mechanical Engineering & Materials Science<br>
+      Duke University
+    </p>
+    <h4>Contact</h4>
+    <p style="font-size: 0.9rem;">
+      <a href="mailto:yun.bai@duke.edu" target="_blank">Email</a><br>
+      <a href="https://scholar.google.com/citations?user=M-WIuMIAAAAJ&hl=en" target="_blank">Google Scholar</a><br>
+      <a href="https://www.linkedin.com/in/yun-bai-a41209252/" target="_blank">LinkedIn</a>
+    </p>
+    <h4>Opportunities</h4>
+    <p style="font-size: 0.9rem;">Exploring postdoctoral opportunities for 2025.</p>
+    <a href="CV_Yun_Bai.pdf" target="_blank" style="display: inline-block; margin-top: 0.5rem; padding: 0.4rem 0.8rem; background: #1f3c88; color: white; border-radius: 5px; text-decoration: none;">Download CV</a>
+  </div>
+
 
   <script>
     function showSection(id) {
